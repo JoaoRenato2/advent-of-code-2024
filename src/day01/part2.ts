@@ -23,7 +23,8 @@ const calculateSimilarityScore = (left: number[], right: number[]): number => {
 
   for (const num of right) {
     if (frequencyMap.has(num)) {
-      frequencyMap.set(num, frequencyMap.get(num)! + 1);
+      const currentCount = frequencyMap.get(num) as number;
+      frequencyMap.set(num, currentCount + 1);
     } else {
       frequencyMap.set(num, 1);
     }
